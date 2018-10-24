@@ -30,7 +30,9 @@
     "test:unit": "istanbul cover _mocha --report lcovonly -- test/unit/**/*-spec.js",
     "test:acceptance": "mocha --timeout 10000 test/acceptance/**/*-spec.js",
     "test:all": "yarn run test:unit && yarn run test:acceptance",
-    "test": "yarn run lint && yarn run test:all"
+    "test": "yarn run lint && yarn run test:all",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "engines": {
     "node": "^4.2.0 || ^6.5.0"
@@ -56,7 +58,8 @@
     "shasum": "1.0.2",
     "symlink-or-copy": "1.1.8",
     "update-notifier": "1.0.3",
-    "validator": "6.2.1"
+    "validator": "6.2.1",
+    "snyk": "^1.104.2"
   },
   "devDependencies": {
     "chai": "3.5.0",
@@ -74,5 +77,6 @@
       "npm",
       "fkill"
     ]
-  }
+  },
+  "snyk": true
 }
